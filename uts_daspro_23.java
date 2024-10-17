@@ -5,11 +5,13 @@ public class uts_daspro_23 {
 
     public static void main(String[] args) {
 
+        //deklarasi variable
         int senjata, senjataAK = 30, senjataFamas = 20, penyembuh = 3, poinPenyembuh = 25, seranganMusuh = 15, ronde = 0, aksi;
         double menghindar = 0.1, nyawaPemain = 0, nyawaMusuh = 0;
 
         Scanner sc = new Scanner(System.in);
 
+        //input nyawa
         System.out.println("===Nilai Awal Permainan===");
         System.out.print("Nyawa Pemain : ");
         nyawaPemain = sc.nextDouble();
@@ -18,6 +20,7 @@ public class uts_daspro_23 {
 
         System.out.println("\n===Pertarungan Free Fire dimulai!\n");
 
+        //mulai perulangan
         do {
             ronde++;
             System.out.println("\n>> Ronde " + ronde + " <<");
@@ -26,6 +29,7 @@ public class uts_daspro_23 {
             nyawaPemain -= seranganMusuh;
             System.out.println("Nyawa kamu sekarang: " + (int) nyawaPemain);
 
+            //check nyawa pemain
             if (nyawaPemain <= 0) {
                 break;
             }
@@ -37,6 +41,7 @@ public class uts_daspro_23 {
             System.out.println("3. Menghindar (tidak menyerang musuh)");
             aksi = sc.nextInt();
 
+            //aksi : serang
             if (aksi == 1) {
                 System.out.println("Pilih senjata:");
                 System.out.println("1. AK");
@@ -55,7 +60,8 @@ public class uts_daspro_23 {
                 }
                 System.out.println("Nyawa musuh sekarang: " + (int) nyawaMusuh);
 
-            } else if (aksi == 2) {
+            } //aksi : heal 
+            else if (aksi == 2) {
                 if (penyembuh > 0) {
                     System.out.println("Kamu menggunakan item penyembuh. Nyawa kamu bertambah " + poinPenyembuh + " HP.");
                     nyawaPemain += poinPenyembuh;
@@ -65,7 +71,8 @@ public class uts_daspro_23 {
                 }
                 System.out.println("Nyawa kamu sekarang: " + (int) nyawaPemain);
 
-            } else if (aksi == 3) {
+            } //aksi : menghindar
+            else if (aksi == 3) {
                 System.out.println("Kamu memilih untuk menghindar, sayang sekali!");
                 double nyawaTambah = nyawaMusuh * menghindar;
                 nyawaMusuh += nyawaTambah;
